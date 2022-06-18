@@ -1,7 +1,9 @@
 import { createTheme, darkColors, lightColors } from "@rneui/themed";
 import { Platform } from "react-native";
 
-const theme = createTheme({
+export const defaultMode = "light";
+
+export const theme = createTheme({
   lightColors: {
     ...Platform.select({
       default: lightColors.platform.android,
@@ -14,7 +16,5 @@ const theme = createTheme({
       ios: darkColors.platform.ios,
     }),
   },
-  mode: 'light',
+  mode: defaultMode,
 });
-
-export default theme;
