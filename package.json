@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-navigation/bottom-tabs": "^6.3.1",
     "@react-navigation/native": "^6.0.10",
+    "@react-navigation/native-stack": "^6.6.2",
     "@rneui/base": "^4.0.0-rc.4",
     "@rneui/themed": "^4.0.0-rc.4",
     "expo": "~45.0.0",

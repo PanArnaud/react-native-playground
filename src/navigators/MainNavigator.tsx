@@ -1,10 +1,10 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Icon } from "@rneui/themed";
 import React from "react";
-import LatestNews from "../screens/LatestNews";
 import MarketData from "../screens/MarketData";
 import Notifications from "../screens/Notifications";
 import Profile from "../screens/Profile";
+import NewsNavigator from "./NewsNavigator";
 
 const Tab = createBottomTabNavigator();
 
@@ -14,7 +14,7 @@ const MainNavigator = (): JSX.Element => {
       screenOptions={({ route }) => ({
         tabBarIcon: ({ color, size }) => {
           switch (route.name) {
-            case "latest-news":
+            case "news-navigator":
               return (
                 <Icon
                   name="newspaper-o"
@@ -56,7 +56,11 @@ const MainNavigator = (): JSX.Element => {
         },
       })}
     >
-      <Tab.Screen name="latest-news" component={LatestNews} />
+      <Tab.Screen
+        name="news-navigator"
+        component={NewsNavigator}
+        options={{ headerShown: false }}
+      />
       <Tab.Screen name="market-data" component={MarketData} />
       <Tab.Screen name="notifications" component={Notifications} />
       <Tab.Screen name="profile" component={Profile} />
