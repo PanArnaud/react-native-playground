@@ -1,20 +1,26 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, ThemeProvider, useThemeMode } from "@rneui/themed";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import theme from "./src/theme/theme";
 
-export default function App() {
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaProvider>
+      <ThemeProvider theme={theme}>
+        <Component />
+      </ThemeProvider>
+    </SafeAreaProvider>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const Component = (): JSX.Element => {
+  const { mode, setMode } = useThemeMode();
+  return (
+    <Button
+      style={{ paddingTop: 150 }}
+      onPress={() => setMode(mode === "dark" ? "light" : "dark")}
+      title={mode}
+    />
+  );
+};
+
+export default App;
