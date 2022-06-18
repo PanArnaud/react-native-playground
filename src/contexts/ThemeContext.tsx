@@ -1,4 +1,5 @@
 import { createContext } from "react";
+import { defaultMode } from "../theme/theme";
 
 export interface ThemeContextData {
   navigationMode: any;
@@ -6,6 +7,6 @@ export interface ThemeContextData {
 }
 
 export const ThemeContext = createContext<ThemeContextData>({
-  navigationMode: "light",
+  navigationMode: defaultMode,
   setNavigationMode: null,
 });
