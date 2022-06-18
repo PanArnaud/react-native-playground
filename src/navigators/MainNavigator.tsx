@@ -1,7 +1,6 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Icon } from "@rneui/themed";
 import React from "react";
-import MarketData from "../screens/MarketData";
 import Notifications from "../screens/Notifications";
 import Profile from "../screens/Profile";
 import NewsNavigator from "./NewsNavigator";
@@ -23,20 +22,11 @@ const MainNavigator = (): JSX.Element => {
                   size={size}
                 />
               );
-            case "market-data":
-              return (
-                <Icon
-                  name="linechart"
-                  type="ant-design"
-                  color={color}
-                  size={size}
-                />
-              );
             case "notifications":
               return (
                 <Icon
-                  name="bell-o"
-                  type="font-awesome"
+                  name="bell"
+                  type="feather"
                   color={color}
                   size={size}
                 />
@@ -44,8 +34,8 @@ const MainNavigator = (): JSX.Element => {
             case "profile":
               return (
                 <Icon
-                  name="user-o"
-                  type="font-awesome"
+                  name="user"
+                  type="feather"
                   color={color}
                   size={size}
                 />
@@ -61,7 +51,6 @@ const MainNavigator = (): JSX.Element => {
         component={NewsNavigator}
         options={{ headerShown: false }}
       />
-      <Tab.Screen name="market-data" component={MarketData} />
       <Tab.Screen name="notifications" component={Notifications} />
       <Tab.Screen name="profile" component={Profile} />
     </Tab.Navigator>
