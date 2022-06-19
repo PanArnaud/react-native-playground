@@ -14,13 +14,6 @@ const NewsNavigator = (): JSX.Element => {
         name="latest-news"
         component={LatestNews}
         options={{
-          headerLeft: () => (
-            <Button
-              type="clear"
-              titleStyle={{ color: colors.primary }}
-              title="Sections"
-            />
-          ),
           headerRight: () => (
             <Button
               type="clear"
